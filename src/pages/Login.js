@@ -48,7 +48,7 @@ class Login extends React.Component {
   render() {
     const { email, password, isBtnDisabled } = this.state;
     return (
-      <form>
+      <form className="login-form">
         <input
           data-testid="email-input"
           type="text"
