@@ -3,6 +3,8 @@ export const LOGIN = 'LOGIN';
 export const REQUEST_API = 'REQUEST_API';
 export const RECEIVE_API_SUCESS = 'RECEIVE_API_SUCESS';
 export const RECEIVE_API_FAILURE = 'RECEIVE_API_FAILURE';
+export const UPDATE_EXPENSES = 'UPDATE_EXPENSES';
+export const TOTAL_SUM = 'TOTAL_SUM';
 
 export const loginAction = (email) => ({
   type: LOGIN,
@@ -35,3 +37,13 @@ export const fetchAPI = () => async (dispatch) => {
     dispatch(receiveFailure(error));
   }
 };
+
+export const updateExpenses = (state) => ({
+  type: UPDATE_EXPENSES,
+  payload: state,
+});
+
+export const totalSum = (amount) => ({
+  type: TOTAL_SUM,
+  payload: amount,
+});

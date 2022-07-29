@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchAPI } from '../redux/actions';
+import { fetchAPI, updateExpenses, totalSum } from '../redux/actions';
+
+const food = 'Alimentação';
 
 class WalletForm extends Component {
   constructor() {
     super();
     this.state = {
-      valor: '',
+      id: 0,
+      value: '',
       description: '',
-      currency: '',
-      method: '',
-      tag: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: food,
+      exchangeRates: {},
     };
   }
 
@@ -21,25 +25,66 @@ class WalletForm extends Component {
   }
 
   handleInput = ({ target }) => {
-    const { name, value } = target;
+    // const { name, value } = target;
     this.setState({
-      [name]: value,
+      [target.name]: target.value,
     });
   };
 
+  getRates = async () => {
+    const request = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const response = await request.json();
+    this.setState({
+      exchangeRates: response,
+    });
+  };
+
+  clearState = () => {
+    this.setState((prevState) => ({
+      id: prevState.id + 1,
+      value: '',
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: food,
+      exchangeRates: {},
+    }));
+  };
+
+  getSum = () => {
+    const { getValue } = this.props;
+    const { value, currency, exchangeRates } = this.state;
+    const current = exchangeRates[currency].ask;
+    const total = (current * value);
+    const roundTotal = parseFloat(total.toFixed(2));
+    getValue(roundTotal);
+  };
+
+  saveExpense = async () => {
+    const { getExpenses } = this.props;
+    // pega as rates
+    await this.getRates();
+    // salva na chave 'expenses' do global
+    getExpenses(this.state);
+    // atualiza a soma total
+    this.getSum();
+    // limpa o state.
+    this.clearState();
+  };
+
   render() {
-    const { valor, description, currency, method, tag } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     const { currencies } = this.props;
     return (
       <div>
         <form>
-          <label htmlFor="valor">
+          <label htmlFor="value">
             Valor da despesa:
             <input
               data-testid="value-input"
-              type="text"
-              name="valor"
-              value={ valor }
+              type="number"
+              name="value"
+              value={ value }
               onChange={ this.handleInput }
             />
           </label>
@@ -85,9 +130,9 @@ class WalletForm extends Component {
               value={ method }
               onChange={ this.handleInput }
             >
-              <option value="dinheiro">Dinheiro</option>
-              <option value="cartao-credito">Cartão de crédito</option>
-              <option value="cartao-debito">Cartão de débito</option>
+              <option value="Dinheiro">Dinheiro</option>
+              <option value="Cartão de crédito">Cartão de crédito</option>
+              <option value="Cartão de débito">Cartão de débito</option>
             </select>
           </label>
           <br />
@@ -99,17 +144,17 @@ class WalletForm extends Component {
               value={ tag }
               onChange={ this.handleInput }
             >
-              <option value="alimentacao">Alimentação</option>
-              <option value="lazer">Lazer</option>
-              <option value="trabalho">Trabalho</option>
-              <option value="transporte">Transporte</option>
-              <option value="saude">Saúde</option>
+              <option value={ food }>{ food }</option>
+              <option value="Lazer">Lazer</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Transporte">Transporte</option>
+              <option value="Saúde">Saúde</option>
             </select>
           </label>
           <br />
           <button
             type="button"
-            // onClick={}
+            onClick={ this.saveExpense }
           >
             Adicionar despesa
           </button>
@@ -125,10 +170,14 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getCurrencies: () => dispatch(fetchAPI()),
+  getExpenses: (expense) => dispatch(updateExpenses(expense)),
+  getValue: (value) => dispatch(totalSum(value)),
 });
 
 WalletForm.propTypes = {
   getCurrencies: PropTypes.func.isRequired,
+  getExpenses: PropTypes.func.isRequired,
+  getValue: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
