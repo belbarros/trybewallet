@@ -55,9 +55,22 @@ class WalletForm extends Component {
           </label>
           <br />
           {/* Currencies -> Map do estado global removendo USDT */}
-          {
-            currencies.map()
-          }
+          <label htmlFor="currency">
+            <select
+              data-testid="currency-input"
+              name="currency"
+            >
+              {
+                currencies.map((currency) => (
+                  <option
+                    value={ currency }
+                    key={ currency }
+                  >
+                    { currency }
+                  </option>))
+              }
+            </select>
+          </label>
           <br />
           <label htmlFor="method">
             Método de pagamento:
