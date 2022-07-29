@@ -1,4 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
+import { RECEIVE_API_SUCESS } from '../actions/index';
 
 const initialState = {
   currencies: [], // array de string
@@ -9,6 +10,11 @@ const initialState = {
 
 function wallet(state = initialState, action) {
   switch (action.type) {
+  case RECEIVE_API_SUCESS:
+    return {
+      ...state,
+      currencies: action.payload,
+    };
   default:
     return state;
   }

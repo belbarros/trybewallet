@@ -15,7 +15,7 @@ export const requestAPI = () => ({
 
 export const receiveSucess = (currencies) => ({
   type: RECEIVE_API_SUCESS,
-  currencies,
+  payload: currencies,
 });
 
 export const receiveFailure = (error) => ({
@@ -23,18 +23,15 @@ export const receiveFailure = (error) => ({
   error,
 });
 
-export function fetchAPI() {
-  return async (dispatch) => {
-    dispatch(requestAPI());
-    try {
-      const request = await fetch('https://economia.awesomeapi.com.br/json/all');
-      const response = await request.json();
-      // Retirar apenas as currencies (KEYS)
-      const currenciesAll = Object.keys(response);
-      const currencies = currenciesAll.filter((e) => e !== 'USDT');
-      dispatch(receiveSucess(currencies));
-    } catch (error) {
-      dispatch(receiveFailure(error));
-    }
-  };
-}
+export const fetchAPI = () => async (dispatch) => {
+  dispatch(requestAPI());
+  try {
+    const request = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const response = await request.json();
+    // Retirar apenas as currencies (KEYS)
+    const currencies = Object.keys(response).filter((e) => e !== 'USDT');
+    dispatch(receiveSucess(currencies));
+  } catch (error) {
+    dispatch(receiveFailure(error));
+  }
+};
