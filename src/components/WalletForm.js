@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { fetchAPI } from '../redux/actions';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { fetchAPI } from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -14,10 +14,10 @@ class WalletForm extends Component {
     };
   }
 
-  // componentDidMount() {
-  // const { getCurrencies } = this.props;
-  // getCurrencies();
-  // }
+  componentDidMount() {
+    const { getCurrencies } = this.props;
+    getCurrencies();
+  }
 
   handleInput = ({ target }) => {
     const { name, value } = target;
@@ -28,7 +28,7 @@ class WalletForm extends Component {
 
   render() {
     const { value, description, method, tag } = this.state;
-    // const { currencies } = this.props;
+    const { currencies } = this.props;
     return (
       <div>
         <form>
@@ -55,6 +55,9 @@ class WalletForm extends Component {
           </label>
           <br />
           {/* Currencies -> Map do estado global removendo USDT */}
+          {
+            currencies.map()
+          }
           <br />
           <label htmlFor="method">
             Método de pagamento:
@@ -102,13 +105,13 @@ const mapStateToProps = (store) => ({
   currencies: store.wallet.currencies,
 });
 
-// const mapDispatchToProps = (dispatch) => ({
-// getCurrencies: () => dispatch(fetchAPI())
-// });
+const mapDispatchToProps = (dispatch) => ({
+  getCurrencies: () => dispatch(fetchAPI()),
+});
 
-// WalletForm.propTypes = {
-// getCurrencies: PropTypes.func.isRequired,
-// currencies: PropTypes.arrayOf(PropTypes.string).isRequired
-// };
+WalletForm.propTypes = {
+  getCurrencies: PropTypes.func.isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
-export default connect(mapStateToProps, null)(WalletForm);
+export default connect(mapStateToProps, mapDispatchToProps)(WalletForm);

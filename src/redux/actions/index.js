@@ -30,7 +30,9 @@ export function fetchAPI() {
       const request = await fetch('https://economia.awesomeapi.com.br/json/all');
       const response = await request.json();
       // Retirar apenas as currencies (KEYS)
-      dispatch(receiveSucess(response));
+      const currenciesAll = Object.keys(response);
+      const currencies = currenciesAll.filter((e) => e !== 'USDT');
+      dispatch(receiveSucess(currencies));
     } catch (error) {
       dispatch(receiveFailure(error));
     }

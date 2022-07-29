@@ -1,4 +1,11 @@
-.login-form {
+.login-div {
+  background-color: green;
+  display: block;
+}
+
+.form {
   background-color: whitesmoke;
   color: green;
+  display: block;
 }
+
