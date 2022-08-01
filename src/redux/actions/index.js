@@ -5,6 +5,8 @@ export const RECEIVE_API_SUCESS = 'RECEIVE_API_SUCESS';
 export const RECEIVE_API_FAILURE = 'RECEIVE_API_FAILURE';
 export const UPDATE_EXPENSES = 'UPDATE_EXPENSES';
 export const TOTAL_SUM = 'TOTAL_SUM';
+export const REMOVE = 'REMOVE';
+export const UPDATE_SUM = 'UPDATE_SUM';
 
 export const loginAction = (email) => ({
   type: LOGIN,
@@ -46,4 +48,14 @@ export const updateExpenses = (state) => ({
 export const totalSum = (amount) => ({
   type: TOTAL_SUM,
   payload: amount,
+});
+
+export const removeExp = (id) => ({
+  type: REMOVE,
+  payload: id,
+});
+
+export const updateTotal = (value) => ({
+  type: UPDATE_SUM,
+  payload: value,
 });

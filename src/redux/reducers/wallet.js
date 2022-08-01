@@ -1,5 +1,7 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { RECEIVE_API_SUCESS, TOTAL_SUM, UPDATE_EXPENSES } from '../actions/index';
+import {
+  RECEIVE_API_SUCESS, REMOVE, TOTAL_SUM, UPDATE_EXPENSES, UPDATE_SUM,
+} from '../actions/index';
 
 const initialState = {
   currencies: [], // array de string
@@ -25,6 +27,16 @@ function wallet(state = initialState, action) {
     return {
       ...state,
       totalSum: state.totalSum + action.payload,
+    };
+  case REMOVE:
+    return {
+      ...state,
+      expenses: state.expenses.filter((expense) => expense.id !== action.payload),
+    };
+  case UPDATE_SUM:
+    return {
+      ...state,
+      totalSum: state.totalSum - action.payload,
     };
   default:
     return state;

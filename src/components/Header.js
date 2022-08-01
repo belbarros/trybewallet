@@ -11,7 +11,7 @@ class Header extends Component {
           { email }
         </div>
         <div data-testid="total-field">
-          { sum }
+          { Math.abs(sum).toFixed(2) }
         </div>
         <div data-testid="header-currency-field">
           BRL
