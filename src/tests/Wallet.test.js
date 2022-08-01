@@ -15,7 +15,7 @@ describe('A página wallet', () => {
         expect(sum).toBeInTheDocument();
     });
     test('O formulário', async () => {
-        renderWithRouterAndRedux(<Wallet />);
+        renderWithRouterAndRedux(<Wallet />, '/carteira');
 
         const valueInp = screen.getByTestId('value-input');
         const descriptInput = screen.getByTestId('description-input');
@@ -36,12 +36,14 @@ describe('A página wallet', () => {
         userEvent.type(descriptInput, 'A');
         userEvent.click(button);
 
-        const valueCell = await screen.findByRole('cell', { name: /100/i });
-        expect(valueCell).toBeInTheDocument();
+        const cells = await screen.findByText('A');
 
-        const deleteBtn = await screen.getByTestId('delete-btn');
+        const deleteBtn = await screen.findByTestId('delete-btn');
         expect(deleteBtn).toBeInTheDocument();
 
+        userEvent.click(deleteBtn);
+
+        expect(cells).not.toBeInTheDocument();
     });
 });
 
