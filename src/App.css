@@ -1,11 +1,262 @@
 .login-div {
-  background-color: green;
-  display: block;
+  align-items: center;
+  background-color: #313d5a;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.login-div h1 {
+  border-bottom: 5px solid #73628a;
+  color: white;
+  letter-spacing: 2.5px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
 }
 
 .form {
-  background-color: whitesmoke;
-  color: green;
-  display: block;
+  background-color: #eaeaea;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px 0 rgba(black, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: -160px;
+  padding: 40px;
 }
 
+.form h2 {
+  color: #313d5a;
+  font-weight: 700;
+  margin-bottom: -18px;
+}
+
+.form h5 {
+  color: #73628a;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1.5px solid #bcb4e4;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 1.125rem;
+  margin-bottom: 15px;
+  padding: 0.25em 2.5em 0.25em 0.5em;
+  width: 250px;
+}
+
+.input-label {
+  color: #313d5a;
+  font-weight: 500;
+}
+
+.form button {
+  appearance: none;
+  background-color: #73628a;
+  border: 1px solid rgba(27, 31, 35, 0);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0) 0 1px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 25px;
+  padding: 6px 16px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table button {
+  appearance: none;
+  border: 1px solid rgba(27, 31, 35, 0);
+  border-radius: 20px;
+  box-shadow: rgba(27, 31, 35, 0) 0 1px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 10px;
+  margin-right: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.expense-form button {
+  appearance: none;
+  background-color: #313d5a;
+  border-radius: 20px;
+  box-shadow: rgba(27, 31, 35, 0) 0 1px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 10px;
+  margin-right: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form button:disabled {
+  background-color: #bcb4e4;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.header {
+  align-items: center;
+  background-color: #313d5a;
+  box-shadow: 0 0 4px black;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  padding: 2px;
+}
+
+.content {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 1em;
+  text-decoration: none;
+  width: 100vw;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+.expense-form {
+  align-items: center;
+  background-color: #73628a;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
+  width: 90%;
+}
+
+.expense-form label {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  justify-content: space-evenly;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.expense-form input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.expense-form select {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.table-div {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  max-width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+.add-title {
+  color: #313d5a;
+  margin-bottom: -25px;
+  margin-left: 5%;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.exp-title {
+  color: #313d5a;
+  margin-bottom: -10px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+th {
+  background-color: #73628a;
+  color: white;
+  padding: 15px;
+}
+
+tbody , td {
+  background-color: #eaeaea;
+  color: #313d5a;
+  padding: 15px;
+}
+
+.edit-btn {
+  background-color: #313d5a;
+}
+
+.delete-btn {
+  background-color: #b80022;
+}
+
+.main-title {
+  color: #313d5a;
+  margin-bottom: -10px;
+  margin-left: 5%;
+  text-align: left;
+}
+
+.log-email {
+  font-weight: 700;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+#footer {
+  background-color: #dadedf;
+  bottom: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+/* stylelint-disable-next-line selector-max-specificity */
+#footer p {
+  font-size: small;
+  margin-top: 20px;
+  text-align: center;
+}
