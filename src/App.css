@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather", sans-serif;
+  padding: 0;
+}
+
 .login-div {
   align-items: center;
   background-color: #313d5a;
@@ -25,7 +36,6 @@
   flex-direction: column;
   justify-content: space-around;
   margin: auto;
-  margin-top: -160px;
   padding: 40px;
 }
 
