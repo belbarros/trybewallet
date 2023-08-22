@@ -1,0 +1,81 @@
+.login-div {
+    align-items: center;
+    background-color: #313d5a;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+  }
+  
+  .login-div h1 {
+    border-bottom: 5px solid #73628a;
+    color: white;
+    letter-spacing: 2.5px;
+    /* margin: auto; */
+    margin-top: 100px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .form {
+    background-color: #eaeaea;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 0 rgba(black, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* margin: auto; */
+    padding: 40px;
+  }
+  
+  .form h2 {
+    color: #313d5a;
+    font-weight: 700;
+    margin-bottom: -18px;
+  }
+  
+  .form h5 {
+    color: #73628a;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  .input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1.5px solid #bcb4e4;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 1.125rem;
+    margin-bottom: 15px;
+    padding: 0.25em 2.5em 0.25em 0.5em;
+    width: 250px;
+  }
+  
+  .input-label {
+    color: #313d5a;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .form button {
+    appearance: none;
+    background-color: #73628a;
+    border: 1px solid rgba(27, 31, 35, 0);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0) 0 1px 0;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 10px;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
