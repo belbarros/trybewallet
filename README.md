@@ -1,10 +1,21 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Trybewallet
+
+🇧🇷: Aplicação que computa gastos em diferentes moedas, convertendo tudo para uma única moeda escolhida pelo usuário. Desenvolvida como projeto do módulo de Front-End da Trybe!<br>
+🇺🇸: Application that computes expenses in different currencies, converting everything to a single currency chosen by the user. This project was developed as Trybe's coursework for the Front-End module.
+
+## Skills
+- API [Cotação de Moeda](https://docs.awesomeapi.com.br/api-de-moedas);
+- React.js;
+- Redux;
+- CSS.
+
+## How to run it
+
+    1. Clone the repository or fork it;
+    2. Run `npm install`;
+    3. Run `npm start`!
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Screenshots
+:construction: 
