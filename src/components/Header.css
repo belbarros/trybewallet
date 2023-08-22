@@ -1,0 +1,11 @@
+.header {
+  align-items: center;
+  gap: 10px;
+  background-color: #313d5a;
+  box-shadow: 0 0 4px black;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  padding: 12px;
+}

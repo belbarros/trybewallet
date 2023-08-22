@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchAPI, updateExpenses, totalSum } from '../redux/actions';
+import './WalletForm.css';
 
 const food = 'Alimentação';
 

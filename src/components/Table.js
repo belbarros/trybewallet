@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeExp, updateTotal } from '../redux/actions';
+import './Table.css';
 
 class Table extends Component {
   updateTotal = (value) => {
