@@ -1,0 +1,84 @@
+.table button {
+    border-radius: 8px;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 0 15px;
+    margin: auto;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-td {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.table-div {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  max-width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #73628a;
+  color: white;
+  padding: 15px;
+  font-size: 14px;
+}
+
+th:first-of-type {
+    border-radius: 10px 0 0 0;
+}
+
+th:last-of-type {
+    border-radius: 0 10px 0 0;
+}
+
+.table {
+    border-collapse: collapse;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+}
+
+.table tbody {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody:last-of-type {
+    border-bottom: 1.5px solid #313d5a;
+}
+
+tbody,
+td {
+  color: #313d5a;
+  padding: 10px;
+}
+
+tbody:nth-child(odd) {
+  background: #eaeaea;
+}
+
+tbody:nth-child(even) {
+  background: whitesmoke;
+}
+
+.edit-btn {
+  background-color: #313d5a;
+  border: 1px solid #313d5a;
+}
+
+.delete-btn {
+  background-color: #d63452;
+  border: 1px solid #d63452;
+}

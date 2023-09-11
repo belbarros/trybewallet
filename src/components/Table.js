@@ -21,8 +21,8 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
-        <table>
+      <div className='table-div'>
+        <table className='table'>
           <tr>
             <th>Descrição</th>
             <th>Tag</th>
@@ -32,7 +32,7 @@ class Table extends Component {
             <th>Câmbio utilizado</th>
             <th>Valor convertido</th>
             <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th>Ações</th>
           </tr>
           {
             expenses.map((e) => (
@@ -51,10 +51,11 @@ class Table extends Component {
                     ) }
                   </td>
                   <td>Real</td>
-                  <td>
+                  <td className='button-td'>
                     <button
                       type="button"
                       data-testid="edit-btn"
+                      className='edit-btn'
                       // onClick={}
                     >
                       Editar
@@ -62,6 +63,7 @@ class Table extends Component {
                     <button
                       type="button"
                       data-testid="delete-btn"
+                      className='delete-btn'
                       onClick={ () => this.deleteExpense(e) }
                     >
                       Excluir
