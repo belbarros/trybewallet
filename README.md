@@ -19,8 +19,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Or check it out live [Here!](https://trybewallet-mauve.vercel.app/)
 
-🇺🇸: To log in, simply but any email with a valid format and any password with at least 6 characters. <br>
-🇧🇷: Para fazer o login, basta digitar um email num formato válido e qualquer senha com pelo menos 6 caracteres.
+🇧🇷: Para fazer o login, basta digitar um email num formato válido e qualquer senha com pelo menos 6 caracteres. <br>
+🇺🇸: To log in, simply but any email with a valid format and any password with at least 6 characters.
 
 ### Screenshots
 <img src='./src/img/s1.png' /> 
