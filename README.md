@@ -20,5 +20,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Or check it out live [Here!](https://trybewallet-mauve.vercel.app/)
 
 ### Screenshots
-<img src='./img/s1.png' /> 
-<img src='./img/s2.png' />
+<img src='./src/img/s1.png' /> 
+<img src='./src/img/s2.png' />
